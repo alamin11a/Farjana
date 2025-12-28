@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Farjana</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display&display=swap');
+        
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f0f1e, #1a0f2e, #2d1b3a);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 70px 100px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 120px rgba(255, 215, 0, 0.15);
+            text-align: center;
+            max-width: 95%;
+            animation: appear 2.5s ease-out;
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 3rem;
+            letter-spacing: 12px;
+            margin: 0 0 20px 0;
+            color: #ffd700;
+            text-transform: uppercase;
+            animation: fadeInUp 2s ease-out;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 9rem;
+            margin: 0;
+            color: #ffd700;
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+            transition: all 0.5s ease;
+            animation: glowPulse 5s infinite alternate, scaleIn 2.5s ease-out;
+        }
+        h1:hover {
+            text-shadow: 0 0 100px rgba(255, 215, 0, 0.9);
+            transform: scale(1.05);
+        }
+        p {
+            font-size: 2rem;
+            color: #e0e0e0;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 50px auto;
+            font-weight: 300;
+            animation: fadeInUp 3.5s ease-out;
+        }
+        @keyframes appear {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes glowPulse {
+            from { text-shadow: 0 0 40px rgba(255, 215, 0, 0.4); }
+            to { text-shadow: 0 0 80px rgba(255, 215, 0, 0.8); }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <h2>Happy Birthday</h2>
+        <h1>Farjana</h1>
+        <p>ফারজানা, জন্মদিনে অনেক অনেক শুভকামনা। 🎂✨<br><br>
+     আশা করি নতুন বছর ভালো কাটবে 
+     
+        
+          আর দোয়া করি যাতে এই নতুন বছরে Single থেকে Mingle হছ😁   </p>
+    </div>
+
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80 },
+                color: { value: "#ffd700" },
+                shape: { type: "circle" },
+                opacity: { value: 0.6, random: true, anim: { enable: true, speed: 0.8 } },
+                size: { value: 3, random: true },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 1, direction: "none", random: true }
+            },
+            interactivity: {
+                events: { onhover: { enable: true, mode: "bubble" } }
+            }
+        });
+
+        // প্রিমিয়াম গোল্ড কনফেটি
+        function premiumConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 80,
+                origin: { y: 0.6 },
+                colors: ['#ffd700', '#ffffff', '#ffedbc'],
+                ticks: 200,
+                gravity: 0.6,
+                decay: 0.94,
+                startVelocity: 30
+            });
+        }
+
+        window.onload = () => {
+            setTimeout(premiumConfetti, 1000);
+        };
+
+        // ক্লিকে হালকা কনফেটি
+        document.addEventListener('click', () => {
+            confetti({
+                particleCount: 50,
+                spread: 60,
+                colors: ['#ffd700', '#ffffff']
+            });
+        });
+
+        // অটো ইন্টারভাল
+        setInterval(premiumConfetti, 10000);
+    </script>
+</body>
+</html>
